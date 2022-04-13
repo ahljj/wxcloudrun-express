@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const { init: initDB, Counter } = require("./db");
-
+const request = require("express")
 const logger = morgan("tiny");
 
 const app = express();
@@ -32,6 +32,21 @@ app.post("/api/count", async (req, res) => {
     test:89811119,
     data: await Counter.count(),
   });
+});
+app.post('/getResult',async (req,res)=> {
+  let formData = {
+    position:"德悦路375弄"
+  }
+  let result = {}
+  await request.post({
+    url:'https://www.vigeotec.com/sh/query',
+    form:formData}, function optionalCallback(err, httpResponse, body) {
+      console.log(httpResponse);
+      result = httpResponse
+      console.log('Upload successful!  Server responded with:', body);
+    });
+  console.log(req)
+  res.send(result)
 });
 
 // 获取计数
