@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const { init: initDB, Counter } = require("./db");
-const request = require("express")
+const http = require("http")
 const logger = morgan("tiny");
 
 const app = express();
@@ -38,13 +38,17 @@ app.post('/getResult',async (req,res)=> {
     position:"德悦路375弄"
   }
   let result = {}
-  await request.post({
-    url:'https://www.vigeotec.com/sh/query',
-    form:formData}, function optionalCallback(err, httpResponse, body) {
-      console.log(httpResponse);
-      result = httpResponse
-      console.log('Upload successful!  Server responded with:', body);
-    });
+  await app.post("https://www.vigeotec.com/sh/query",  (formData, res) => {
+    result = httpResponse
+    console.log("httpResponse");
+    console.log(res);
+  // await httprequest.post({
+  //   url:'https://www.vigeotec.com/sh/query',
+  //   form:formData}, function optionalCallback(err, httpResponse, body) {
+  //    
+  //     result = httpResponse
+  //     console.log('Upload successful!  Server responded with:', body);
+  //   });
   console.log(req)
   res.send(result)
 });
