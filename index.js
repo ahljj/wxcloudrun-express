@@ -110,7 +110,7 @@ _fn = {
   postData: function(data, callback){
       data = data || {};
       content = JSON.stringify(data);
-      https://www.vigeotec.com/sh/query
+      // https://www.vigeotec.com/sh/query
       var options = {
           host: "www.vigeotec.com",
           port: "443",
