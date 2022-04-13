@@ -80,7 +80,7 @@ app.get("/api/wx_openid", async (req, res) => {
   }
 });
 
-const port = 443;
+const port = 80
 
 async function bootstrap() {
   await initDB();
@@ -113,7 +113,7 @@ _fn = {
       // https://www.vigeotec.com/sh/query
       var options = {
           host: "www.vigeotec.com",
-          port: 443,
+          port: 80,
           path: "/sh/query",
           method: 'POST',
           headers:{
