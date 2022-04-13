@@ -38,6 +38,7 @@ app.get("/api/count", async (req, res) => {
   const result = await Counter.count();
   res.send({
     code: 0,
+    "test":"8989"
     data: result,
   });
 });
