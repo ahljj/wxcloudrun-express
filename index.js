@@ -118,7 +118,7 @@ _fn = {
           method: 'POST',
           headers:{
             'Content-Type': 'multipart/form-data',
-                        'Content-Length': content.length
+                        // 'Content-Length': content.length
             //根据提交请求类型不同而不同，以上适用多媒体文件
             //可查询各种报头类型代表的意思
           }
