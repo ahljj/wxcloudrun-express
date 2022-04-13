@@ -29,7 +29,7 @@ app.post("/api/count", async (req, res) => {
   }
   res.send({
     code: 0,
-    "test":"89811119",
+    test:89811119,
     data: await Counter.count(),
   });
 });
@@ -39,7 +39,7 @@ app.get("/api/count", async (req, res) => {
   const result = await Counter.count();
   res.send({
     code: 0,
-    "test":"8989",
+    test:898,
     data: result,
   });
 });
