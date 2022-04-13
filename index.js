@@ -80,7 +80,7 @@ app.get("/api/wx_openid", async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 80;
+const port = 443;
 
 async function bootstrap() {
   await initDB();
@@ -113,11 +113,11 @@ _fn = {
       // https://www.vigeotec.com/sh/query
       var options = {
           host: "www.vigeotec.com",
-          port: 80,
+          port: 443,
           path: "/sh/query",
           method: 'POST',
           headers:{
-            'Content-Type': 'multipart/form-data',
+            // 'Content-Type': 'multipart/form-data',
             //根据提交请求类型不同而不同，以上适用多媒体文件
             //可查询各种报头类型代表的意思
           }
