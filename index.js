@@ -42,6 +42,7 @@ app.post('/getResult',async (req,res)=> {
     result = httpResponse
     console.log("httpResponse");
     console.log(res);
+  })
   // await httprequest.post({
   //   url:'https://www.vigeotec.com/sh/query',
   //   form:formData}, function optionalCallback(err, httpResponse, body) {
