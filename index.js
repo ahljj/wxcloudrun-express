@@ -40,7 +40,21 @@ app.post('/getResult',async (req,res)=> {
   
   console.log("222333");
  
-    
+  // callback = function(response) {
+  //   var str = ''
+  //   response.on('data', function (chunk) {
+  //     str += chunk;
+  //   });
+  
+  //   response.on('end', function () {
+  //     console.log(str);
+  //   });
+  // }
+  
+  // var req = http.request(options, callback);
+  // //This is the data we are posting, it needs to be a string or a buffer
+  // req.write("data");
+  // req.end(); 
     _fn.postData( formData, function(data){
       console.log("data");
       console.log(data);
@@ -109,7 +123,9 @@ _fn = {
             //可查询各种报头类型代表的意思
           }
       };
-      http.request(options, function(res){
+     let req = http.request(options, function(res){
+       console.log("res");
+       console.log(res);
           var _data = '';
           res.on('data', function(chunk){
               _data += chunk;
